@@ -9,6 +9,6 @@ import br.edu.univille.microservergrade.entity.GradeCurricular;
 
 @Repository
 public interface GradeCurricularRepository
-    extends CrudRepository<GradeCurricular, Integer>{
+    extends CrudRepository<GradeCurricular, String>{
 
     }
