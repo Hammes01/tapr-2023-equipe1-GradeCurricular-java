@@ -30,7 +30,7 @@ public class GradeCurricularController {
         return new ResponseEntity<List<GradeCurricular>>(listaGradeCurriculares, HttpStatus.OK);
     }
 
-    @GetMapping("/{id}"")
+    @GetMapping("/{id}")
     public ResponseEntity<GradeCurricular> buscarCarro(@PathParam("id") String id){
         var gradecurricular = service.getById(id);
         if(gradecurricular == null){
