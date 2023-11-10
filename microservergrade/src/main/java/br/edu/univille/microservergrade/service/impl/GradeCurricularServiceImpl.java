@@ -26,9 +26,10 @@ public class GradeCurricularServiceImpl implements GradeCurricularService {
     }
 
     @Override
-    public GradeCurricular getById(String id)
+    public GradeCurricular getById(String id) {
         var gradecurricular = repository.findById(id);
         if(gradecurricular.isPresent())
             return gradecurricular.get();
         return null;
+    }
 }
