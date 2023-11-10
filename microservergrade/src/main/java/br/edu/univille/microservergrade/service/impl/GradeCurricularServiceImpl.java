@@ -39,4 +39,28 @@ public class GradeCurricularServiceImpl implements GradeCurricularService {
             gradecurricular.setId(null);
             return repository.save(gradecurricular);
     }
+
+    @Override
+    public GradeCurricular update(String id, GradeCurricular gradecurricular) {
+        var buscaGradeCurricularAntigo = repository.findById(id);
+        if (buscaGradeCurricularAntigo.isPresent()){
+            var gradecurricularAntigo = buscaGradeCurricularAntigo.get();
+
+            return repository.save(gradecurricularAntigo);
+        }
+        return null;
+    }
+
+    @Override
+    public GradeCurricular delete(String id) {
+        var buscaGradeCurricular = repository.findById(id);
+        if (buscaGradeCurricular.isPresent()){
+            var gradecurricular = buscaGradeCurricular.get();
+
+            repository.delete(gradecurricular);
+
+            return gradecurricular;
+        }
+        return null;
+    }
 }

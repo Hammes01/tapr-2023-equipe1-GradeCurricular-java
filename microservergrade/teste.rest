@@ -11,3 +11,17 @@ Content-Type: application/json
 {
   "nome": "Estrutura de Dados"
 }
+
+
+### Atualizar a Matéria
+PUT http://localhost:8080/api/v1/carros/580c1134-0409-46e9-99a5-887b8e90636f
+Content-Type: application/json
+
+{
+  "nome": "Matemática Discreta"
+}
+
+
+### Remover a Matéria
+DELETE  http://localhost:8080/api/v1/carros/580c1134-0409-46e9-99a5-887b8e90636f
+Content-Type: application/json

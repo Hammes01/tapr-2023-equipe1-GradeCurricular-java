@@ -6,6 +6,7 @@ public interface GradeCurricularService {
     public List<GradeCurricular> getAll();
     public GradeCurricular getById(String id);
     public GradeCurricular saveNew( GradeCurricular gradecurricular);
-
+    public GradeCurricular update(String id, GradeCurricular gradecurricular);
+    public GradeCurricular delete(String id);
 }
 
