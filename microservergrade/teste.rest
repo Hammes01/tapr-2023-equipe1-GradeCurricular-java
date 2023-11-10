@@ -1,1 +1,5 @@
+### Buscar todos os carros
 GET http://localhost:8080/api/v1/grades
+
+### Buscar carro pelo ID
+GET http://localhost:8080/api/v1/grades/580c1134-0409-46e9-99a5-887b8e90636f

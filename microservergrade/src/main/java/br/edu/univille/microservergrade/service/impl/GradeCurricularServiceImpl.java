@@ -24,4 +24,11 @@ public class GradeCurricularServiceImpl implements GradeCurricularService {
         iterador.forEach(listaGradeCurriculares::add);
         return listaGradeCurriculares;
     }
+
+    @Override
+    public GradeCurricular getById(String id)
+        var gradecurricular = repository.findById(id);
+        if(gradecurricular.isPresent())
+            return gradecurricular.get();
+        return null;
 }
