@@ -31,5 +31,12 @@ public class GradeCurricularServiceImpl implements GradeCurricularService {
         if(gradecurricular.isPresent())
             return gradecurricular.get();
         return null;
+        
+    }
+
+    @Override
+    public GradeCurricular saveNew( GradeCurricular gradecurricular) {
+            gradecurricular.setId(null);
+            return repository.save(gradecurricular);
     }
 }

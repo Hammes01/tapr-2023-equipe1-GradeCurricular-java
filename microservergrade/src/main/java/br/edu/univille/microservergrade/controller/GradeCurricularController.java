@@ -5,8 +5,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import com.azure.core.annotation.PathParam;
 
@@ -38,5 +40,14 @@ public class GradeCurricularController {
         return
             new ResponseEntity<GradeCurricular>
             (gradecurricular, HttpStatus.OK);
+    }
+
+    @PostMapping
+    public ResponseEntity<GradeCurricular> inserirGradeCurricular(@RequestBody GradeCurricular gradecurricular) {
+        if(gradecurricular == null){
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
+        gradecurricular = service.saveNew(gradecurricular);
+        return new ResponseEntity<GradeCurricular> (gradecurricular, HttpStatus.OK);
     }
 }
