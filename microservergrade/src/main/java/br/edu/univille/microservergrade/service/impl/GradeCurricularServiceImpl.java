@@ -45,6 +45,11 @@ public class GradeCurricularServiceImpl implements GradeCurricularService {
         var buscaGradeCurricularAntigo = repository.findById(id);
         if (buscaGradeCurricularAntigo.isPresent()){
             var gradecurricularAntigo = buscaGradeCurricularAntigo.get();
+            
+
+            //Atualizar cada atributo do objeto antigo
+            gradecurricularAntigo.setNome(gradecurricular.getNome());
+            gradecurricularAntigo.setCursoId(gradecurricular.getCursoId());
 
             return repository.save(gradecurricularAntigo);
         }

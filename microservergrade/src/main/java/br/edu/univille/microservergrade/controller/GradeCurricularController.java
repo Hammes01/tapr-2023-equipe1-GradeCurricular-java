@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestBody;
 
-import com.azure.core.annotation.PathParam;
 
 import br.edu.univille.microservergrade.entity.GradeCurricular;
 import br.edu.univille.microservergrade.service.GradeCurricularService;
@@ -34,15 +33,16 @@ public class GradeCurricularController {
         return new ResponseEntity<List<GradeCurricular>>(listaGradeCurriculares, HttpStatus.OK);
     }
 
+    
     @GetMapping("/{id}")
-    public ResponseEntity<GradeCurricular> buscarCarro(@PathParam("id") String id){
+    public ResponseEntity<GradeCurricular> buscarGradeCurricular(@PathVariable("id") String id){
         var gradecurricular = service.getById(id);
+        
         if(gradecurricular == null){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return
-            new ResponseEntity<GradeCurricular>
-            (gradecurricular, HttpStatus.OK);
+            new ResponseEntity<GradeCurricular>(gradecurricular, HttpStatus.OK);
     }
 
     @PostMapping
@@ -59,10 +59,10 @@ public class GradeCurricularController {
         if(gradecurricular == null || id == "" || id == null){
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
-        gradecurricular = service.update(id, gradecurricular);
         if(gradecurricular == null){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
+        gradecurricular = service.update(id, gradecurricular);
         return new ResponseEntity<GradeCurricular>(gradecurricular, HttpStatus.OK);
     }
 
