@@ -2,6 +2,9 @@ package br.edu.univille.microservergrade.entity;
 
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
 
 import com.azure.spring.data.cosmos.core.mapping.Container;
@@ -11,14 +14,22 @@ import com.azure.spring.data.cosmos.core.mapping.PartitionKey;
 @Container(containerName="gradecurricular")
 public class GradeCurricular {
     @Id
+    @PartitionKey
     @GeneratedValue
     public String id;
-    @PartitionKey
     public String nome;
-    private String cursoId;
-    
+    public String cursoId;
+    public List<Disciplina> disciplinas = new ArrayList<>();
 
-    
+
+    public List<Disciplina> getDisciplinas() {
+        return disciplinas;
+    }
+
+    public void setDisciplinas(List<Disciplina> disciplinas) {
+        this.disciplinas = disciplinas;
+    }
+
 
     public String getId() {
         return id;
@@ -44,6 +55,6 @@ public class GradeCurricular {
         this.cursoId = cursoId;
     }
 
-
-
 }
+
+
