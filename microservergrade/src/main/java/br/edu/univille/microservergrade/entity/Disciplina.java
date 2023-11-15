@@ -1,18 +1,11 @@
 package br.edu.univille.microservergrade.entity;
 
+
 public class Disciplina {
-    public String id;
-    public String nome;
-    public String cursoId;
-    public String cargaHoraria;
+    private String nome;
+    private String cursoId;
+    private String cargaHoraria;
 
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
 
     public String getNome() {
         return nome;
@@ -35,6 +28,8 @@ public class Disciplina {
     }
 
     public void setCargaHoraria(String cargaHoraria) {
-        this.cargaHoraria = cargaHoraria;
+        this.cargaHoraria = cargaHoraria + " hrs";
     }
+
+       
 }

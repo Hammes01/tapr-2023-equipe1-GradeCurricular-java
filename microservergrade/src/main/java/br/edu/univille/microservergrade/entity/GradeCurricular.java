@@ -2,8 +2,6 @@ package br.edu.univille.microservergrade.entity;
 
 
 
-import java.util.ArrayList;
-import java.util.List;
 
 import org.springframework.data.annotation.Id;
 
@@ -19,16 +17,7 @@ public class GradeCurricular {
     public String id;
     public String nome;
     public String cursoId;
-    public List<Disciplina> disciplinas = new ArrayList<>();
-
-
-    public List<Disciplina> getDisciplinas() {
-        return disciplinas;
-    }
-
-    public void setDisciplinas(List<Disciplina> disciplinas) {
-        this.disciplinas = disciplinas;
-    }
+    private Disciplina disciplina;
 
 
     public String getId() {
@@ -53,6 +42,14 @@ public class GradeCurricular {
 
     public void setCursoId(String cursoId) {
         this.cursoId = cursoId;
+    }
+
+    public Disciplina getDisciplina() {
+        return disciplina;
+    }
+
+    public Disciplina setDisciplina(Disciplina disciplina) {
+        return this.disciplina = disciplina;
     }
 
 }

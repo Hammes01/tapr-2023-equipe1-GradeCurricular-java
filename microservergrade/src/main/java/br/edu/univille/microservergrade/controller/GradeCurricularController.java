@@ -59,10 +59,10 @@ public class GradeCurricularController {
         if(gradecurricular == null || id == "" || id == null){
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
+        gradecurricular = service.update(id, gradecurricular);
         if(gradecurricular == null){
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        gradecurricular = service.update(id, gradecurricular);
         return new ResponseEntity<GradeCurricular>(gradecurricular, HttpStatus.OK);
     }
 
