@@ -15,8 +15,8 @@ public class GradeCurricular {
     @PartitionKey
     @GeneratedValue
     public String id;
-    public String nome;
     public String cursoId;
+    public String nome;
     private Disciplina disciplina;
 
 
@@ -28,20 +28,20 @@ public class GradeCurricular {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
     public String getCursoId() {
         return cursoId;
     }
 
     public void setCursoId(String cursoId) {
         this.cursoId = cursoId;
+    }
+
+     public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public Disciplina getDisciplina() {
