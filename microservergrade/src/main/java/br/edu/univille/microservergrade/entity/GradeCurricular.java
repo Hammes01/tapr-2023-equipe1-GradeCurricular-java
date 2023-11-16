@@ -3,6 +3,8 @@ package br.edu.univille.microservergrade.entity;
 
 
 
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
 
 import com.azure.spring.data.cosmos.core.mapping.Container;
@@ -16,8 +18,8 @@ public class GradeCurricular {
     @GeneratedValue
     public String id;
     public String cursoId;
-    public String nome;
-    private Disciplina disciplina;
+    public String curso;
+    private List<Semestre> semestres;
 
 
     public String getId() {
@@ -26,30 +28,24 @@ public class GradeCurricular {
 
     public void setId(String id) {
         this.id = id;
+        this.cursoId = id;
     }
 
-    public String getCursoId() {
-        return cursoId;
+
+     public String getCurso() {
+        return curso;
     }
 
-    public void setCursoId(String cursoId) {
-        this.cursoId = cursoId;
+    public void setCurso(String curso) {
+        this.curso = curso;
     }
 
-     public String getNome() {
-        return nome;
+    public List<Semestre> getSemestres() {
+        return this.semestres;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public Disciplina getDisciplina() {
-        return disciplina;
-    }
-
-    public Disciplina setDisciplina(Disciplina disciplina) {
-        return this.disciplina = disciplina;
+    public void setDisciplinas(List<Semestre> semestres) {
+        this.semestres = semestres;
     }
 
 }

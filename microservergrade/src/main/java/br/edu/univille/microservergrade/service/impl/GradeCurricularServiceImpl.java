@@ -31,7 +31,6 @@ public class GradeCurricularServiceImpl implements GradeCurricularService {
         if(gradecurricular.isPresent())
             return gradecurricular.get();
         return null;
-        
     }
 
     @Override
@@ -48,8 +47,8 @@ public class GradeCurricularServiceImpl implements GradeCurricularService {
             
 
             //Atualizar cada atributo do objeto antigo
-            gradecurricularAntigo.setNome(gradecurricular.getNome());
-            gradecurricularAntigo.setCursoId(gradecurricular.getCursoId());
+            gradecurricularAntigo.setCurso(gradecurricular.getCurso());
+        
 
             return repository.save(gradecurricularAntigo);
         }
