@@ -10,10 +10,10 @@ POST http://localhost:8080/api/v1/grades
 Content-Type: application/json
 
 {
-  "curso": "Sistemas de Informação155", 
+  "curso": "Engenharia de Software", 
   "semestres": [
     {
-      "nome": "1 - Semestre",
+      "nome": "1",
       "disciplinas": [
         {
           "nome": "Das",
@@ -26,7 +26,7 @@ Content-Type: application/json
       ]
     },
     {
-      "nome": "2 - Semestre",
+      "nome": "2",
       "disciplinas": [
         {
           "nome": "TAPR",

@@ -15,12 +15,12 @@ public class Disciplina {
         return this.nome;
     }
 
-    public void setCargaHoraria(String cargaHoraria) {
-        this.cargaHoraria = cargaHoraria;
-    }
-
     public String getCargaHoraria() {
-        return this.cargaHoraria;
+        return cargaHoraria;
+    }
+    
+    public void setCargaHoraria(String cargaHoraria) {
+        this.cargaHoraria = cargaHoraria + " hrs";
     }
 
     public static List<Disciplina> createDisciplinas() {
