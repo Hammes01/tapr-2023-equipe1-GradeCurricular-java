@@ -13,14 +13,14 @@ Content-Type: application/json
   "curso": "Engenharia de Software", 
   "semestres": [
     {
-      "nome": "1",
+      "nome": "2",
       "disciplinas": [
         {
-          "nome": "Das",
+          "nome": "Estrutura 2",
           "cargaHoraria": 72
         },
         {
-          "nome": "Estrutura de Dados",
+          "nome": "Redes",
           "cargaHoraria": 72
         }
       ]
@@ -29,11 +29,11 @@ Content-Type: application/json
       "nome": "2",
       "disciplinas": [
         {
-          "nome": "TAPR",
+          "nome": "TAPR1",
           "cargaHoraria": 72
         },
         {
-          "nome": "DAS2",
+          "nome": "DAS3",
           "cargaHoraria": 72
         }
       ]
