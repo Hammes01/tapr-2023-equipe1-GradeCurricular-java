@@ -3,11 +3,6 @@
 
 # tapr-2023-equipe1-GradeCurricular-java
 
-### FELIZ NATAL PROFESSOR & BOAS FESTAS!!!
-<p aling="center">
-  <img width="480" height="266" src="OCbUcS0BFNcrxhBQRv.gif">
-</p>
-
 
 ## Autenticação no AZURE
 [DOC](https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt)
